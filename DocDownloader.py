@@ -42,6 +42,8 @@ class DocDownloader(object):
     def __init__(self, url, localPath):
         self.baseUrl = url
         self.localPath = os.path.abspath(localPath)
+        if not os.path.exists(self.localPath):
+            os.mkdir(self.localPath)
         self.taskPool = Pool()
 
     def download_page(self, pageRange=[]):

@@ -12,6 +12,8 @@ class DocHandler(object):
         word = wc.Dispatch('Word.Application')
         originPath = os.path.abspath(originPath)
         targetPath = os.path.abspath(targetPath)
+        if not os.path.exists(targetPath):
+            os.mkdir(targetPath)
         for fileName in os.listdir(originPath):
             filepath = os.path.join(originPath, fileName)
             doc = word.Documents.Open(unicode(filepath, "gb2312"))
@@ -36,5 +38,7 @@ class DocHandler(object):
 
     @staticmethod
     def clear_path(path):
+        if not os.path.exists(path):
+            return
         for fileName in os.listdir(os.path.abspath(path)):
             os.remove(os.path.join(path, fileName))
