@@ -1,3 +1,4 @@
+README
 注意事项：
 1. 程序基于python 2.7.8，使用python3可能不兼容
 2. 依赖库文件有 beautifulsoup4, 额外库根据报错提示安装。安装三方库搜索 pip, easy_install
